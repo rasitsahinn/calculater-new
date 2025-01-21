@@ -532,6 +532,7 @@ Bilimsel Fonksiyonlar:
         }
         showKeyboardShortcuts();
         createGraffiti();
+        createConstellations();
     });
 
     function createGraffiti() {
@@ -598,6 +599,55 @@ Bilimsel Fonksiyonlar:
         }
     }
 
+    function createConstellations() {
+        // Akrep takımyıldızı Unicode karakterleri
+        const constellationChars = [
+            '♏', // Akrep burcu sembolü
+            '⛤', // Yıldız
+            '✧', // Küçük yıldız
+            '⋆', // Başka bir yıldız varyasyonu
+            '✦', // Parlak yıldız
+        ];
+
+        const sizes = ['80px', '100px', '120px', '150px'];
+        const rotations = [-45, -30, -15, 0, 15, 30, 45];
+        const positions = generateUniquePositions(15); // Akrep sembolleri için pozisyonlar
+
+        for (let i = 0; i < 15; i++) {
+            const constellation = document.createElement('div');
+            constellation.className = 'constellation';
+            
+            // Rastgele sembol seç
+            const symbol = constellationChars[Math.floor(Math.random() * constellationChars.length)];
+            constellation.textContent = symbol;
+            
+            const size = sizes[Math.floor(Math.random() * sizes.length)];
+            const rotation = rotations[Math.floor(Math.random() * rotations.length)];
+            const position = positions[i];
+            
+            // Rastgele opaklık ve renk varyasyonu
+            const opacity = 0.02 + Math.random() * 0.04;
+            const hue = Math.random() * 30 - 15; // Mor tonlarında varyasyon
+            
+            constellation.style.cssText = `
+                position: fixed;
+                left: ${position.x}vw;
+                top: ${position.y}vh;
+                font-size: ${size};
+                --rotation: ${rotation}deg;
+                opacity: 0;
+                color: rgba(${147 + hue}, 51, 234, ${opacity});
+                animation: 
+                    fadeInConstellation 1.5s ease-out forwards,
+                    pulseConstellation ${4 + Math.random() * 3}s ease-in-out infinite;
+                animation-delay: ${i * 0.2}s, ${1.5 + i * 0.2}s;
+                transform-origin: center center;
+            `;
+            
+            document.body.appendChild(constellation);
+        }
+    }
+
     // Çakışmaları önlemek için pozisyon üreteci
     function generateUniquePositions(count) {
         const positions = [];
@@ -632,8 +682,10 @@ Bilimsel Fonksiyonlar:
 
     // Ekran yönü değişikliğini dinle
     window.addEventListener('orientationchange', () => {
-        // Grafitileri yeniden oluştur
-        document.querySelectorAll('.graffiti').forEach(g => g.remove());
-        setTimeout(createGraffiti, 100); // Yön değişimi tamamlandıktan sonra
+        document.querySelectorAll('.graffiti, .constellation').forEach(el => el.remove());
+        setTimeout(() => {
+            createGraffiti();
+            createConstellations();
+        }, 100);
     });
 }); 

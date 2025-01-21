@@ -493,4 +493,47 @@ button:not(.operator):not(.function):not(#equals):hover {
         transform: scale(1) rotate(var(--rotation));
         filter: brightness(1);
     }
+}
+
+/* Akrep burcu sembolü için yeni class */
+.constellation {
+    position: fixed;
+    color: rgba(147, 51, 234, 0.03);
+    font-family: 'Arial Unicode MS', sans-serif;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    font-size: 120px;
+    text-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.2),
+        -1px -1px 0 rgba(255, 255, 255, 0.1);
+    filter: drop-shadow(0 0 3px rgba(147, 51, 234, 0.2));
+}
+
+@keyframes fadeInConstellation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(var(--rotation));
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(var(--rotation));
+        filter: blur(0);
+    }
+}
+
+@keyframes pulseConstellation {
+    0% {
+        transform: scale(1) rotate(var(--rotation));
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.05) rotate(var(--rotation));
+        filter: brightness(1.2);
+    }
+    100% {
+        transform: scale(1) rotate(var(--rotation));
+        filter: brightness(1);
+    }
 } 

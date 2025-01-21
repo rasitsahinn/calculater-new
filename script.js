@@ -72,6 +72,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     handleNumber(value);
             }
         });
+
+        // Touch cihazlar için ek olay dinleyicileri
+        button.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Çift tıklama önleme
+            button.classList.add('active');
+        }, { passive: false });
+
+        button.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            button.classList.remove('active');
+        }, { passive: false });
     });
 
     document.addEventListener('keydown', (event) => {
@@ -524,6 +535,10 @@ Bilimsel Fonksiyonlar:
     });
 
     function createGraffiti() {
+        // Mobil cihazlarda daha az grafiti
+        const isMobile = window.innerWidth <= 768;
+        const grafitiCount = isMobile ? 10 : 20;
+        
         // Grafiti stillerini çeşitlendirelim
         const styles = [
             {
@@ -546,9 +561,9 @@ Bilimsel Fonksiyonlar:
 
         const sizes = ['70px', '90px', '120px', '150px', '180px'];
         const rotations = [-45, -30, -15, 0, 15, 30, 45];
-        const positions = generateUniquePositions(20); // Çakışmaları önlemek için
+        const positions = generateUniquePositions(grafitiCount); // Çakışmaları önlemek için
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < grafitiCount; i++) {
             const graffiti = document.createElement('div');
             graffiti.className = 'graffiti';
             
@@ -614,4 +629,11 @@ Bilimsel Fonksiyonlar:
             display.style.transform = 'scale(1)';
         }, 200);
     }
+
+    // Ekran yönü değişikliğini dinle
+    window.addEventListener('orientationchange', () => {
+        // Grafitileri yeniden oluştur
+        document.querySelectorAll('.graffiti').forEach(g => g.remove());
+        setTimeout(createGraffiti, 100); // Yön değişimi tamamlandıktan sonra
+    });
 }); 

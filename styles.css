@@ -283,31 +283,161 @@ button:not(.operator):not(.function):not(#equals):hover {
     transform: translateY(-2px);
 }
 
-/* Responsive tasarım */
-@media (max-width: 360px) {
+/* Temel mobil uyumluluk için */
+@media screen and (max-width: 480px) {
     .calculator-container {
-        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        margin: 0;
     }
 
     .calculator {
-        border-radius: 0;
-        padding: 10px;
+        border-radius: 15px;
+        padding: 15px 10px;
+    }
+
+    .buttons {
+        gap: 8px;
     }
 
     button {
         padding: 8px 4px;
-        font-size: 12px;
-        min-height: 32px;
+        font-size: 16px;
+        min-height: 45px; /* Dokunmatik için daha büyük */
+        border-radius: 8px;
     }
 
     .function {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .display {
         font-size: 24px;
         height: 35px;
     }
+
+    .calculation {
+        font-size: 14px;
+    }
+
+    /* Yatay mod için özel stiller */
+    @media (orientation: landscape) {
+        body {
+            padding: 5px;
+        }
+
+        .calculator {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .display-container {
+            grid-column: 1 / -1;
+            margin-bottom: 5px;
+        }
+
+        .history-mini {
+            grid-column: 1 / -1;
+            min-height: 40px;
+        }
+
+        .buttons {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 5px;
+        }
+
+        button {
+            min-height: 35px;
+            font-size: 14px;
+        }
+
+        .function {
+            font-size: 12px;
+        }
+    }
+}
+
+/* Küçük telefonlar için */
+@media screen and (max-width: 320px) {
+    .calculator {
+        padding: 10px 8px;
+    }
+
+    button {
+        padding: 6px 2px;
+        font-size: 14px;
+        min-height: 40px;
+    }
+
+    .function {
+        font-size: 12px;
+    }
+
+    .display {
+        font-size: 22px;
+    }
+}
+
+/* Tablet için */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .calculator-container {
+        max-width: 400px;
+    }
+
+    button {
+        min-height: 50px;
+        font-size: 18px;
+    }
+
+    .function {
+        font-size: 16px;
+    }
+}
+
+/* Grafiti responsive ayarları */
+@media screen and (max-width: 768px) {
+    .graffiti {
+        font-size: 40px !important; /* Mobilde daha küçük grafitiler */
+    }
+}
+
+/* Touch cihazlar için hover efektlerini düzenle */
+@media (hover: none) {
+    button:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    button:active {
+        transform: scale(0.95);
+        background: rgba(46, 204, 113, 0.4);
+    }
+
+    #equals:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    #equals:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Güvenli alan ayarları (iPhone X ve üzeri) */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+        padding-bottom: max(15px, env(safe-area-inset-bottom));
+    }
+}
+
+/* Dark mode desteği */
+@media (prefers-color-scheme: dark) {
+    /* Zaten koyu tema kullandığımız için ek ayara gerek yok */
 }
 
 /* 41 grafiti efekti için yeni stil */

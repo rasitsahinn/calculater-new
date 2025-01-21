@@ -586,7 +586,7 @@ Bilimsel Fonksiyonlar:
                 font-size: ${size};
                 --rotation: ${rotation}deg;
                 opacity: 0;
-                color: rgba(46, ${204 + hue}, 113, ${opacity});
+                color: rgba(147, ${51 + Math.random() * 30}, 234, ${opacity}); /* Mor ton varyasyonu */
                 animation: 
                     fadeInGraffiti 1s ease-out forwards,
                     pulseGraffiti ${3 + Math.random() * 2}s ease-in-out infinite;

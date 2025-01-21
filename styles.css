@@ -7,7 +7,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(45deg, #0a2615, #000000);
+    background: linear-gradient(45deg, #2c0337, #190122);
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -40,12 +40,12 @@ body::before {
 }
 
 .calculator {
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(44, 3, 55, 0.95);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7),
-                0 0 30px rgba(46, 204, 113, 0.1);
-    border: 1px solid rgba(46, 204, 113, 0.3);
+                0 0 30px rgba(147, 51, 234, 0.1);
+    border: 1px solid rgba(147, 51, 234, 0.3);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -67,14 +67,14 @@ body::before {
 .history-mini {
     min-height: 50px;
     height: auto;
-    background: rgba(10, 38, 21, 0.95);
+    background: rgba(88, 28, 135, 0.3);
     border-radius: 6px;
     padding: 6px;
     margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid rgba(46, 204, 113, 0.2);
+    border: 1px solid rgba(147, 51, 234, 0.2);
 }
 
 .history-list {
@@ -87,7 +87,7 @@ body::before {
     padding: 4px 8px;
     font-size: 11px;
     line-height: 1.4;
-    color: #90EE90;
+    color: #c084fc;
     border-radius: 4px;
     transition: all 0.3s ease;
     opacity: 0;
@@ -106,10 +106,10 @@ body::before {
 }
 
 .display-container {
-    background: rgba(10, 38, 21, 0.95);
+    background: rgba(44, 3, 55, 0.95);
     border-radius: 12px;
     padding: 15px;
-    border: 1px solid rgba(46, 204, 113, 0.2);
+    border: 1px solid rgba(147, 51, 234, 0.2);
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px;
     transition: all 0.3s ease;
@@ -123,7 +123,7 @@ body::before {
 .calculation {
     min-height: 20px;
     font-size: 14px;
-    color: #90EE90;
+    color: #c084fc;
     text-align: right;
     margin-bottom: 3px;
     word-wrap: break-word;
@@ -136,7 +136,7 @@ body::before {
     text-align: right;
     border: none;
     background: transparent;
-    color: #ffffff;
+    color: #e9d5ff;
     padding: 0;
     font-weight: 500;
 }
@@ -152,24 +152,24 @@ button {
     font-size: 15px;
     border: none;
     border-radius: 10px;
-    background: rgba(10, 38, 21, 0.95);
-    color: #ffffff;
+    background: rgba(88, 28, 135, 0.8);
+    color: #e9d5ff;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(46, 204, 113, 0.2);
+    border: 1px solid rgba(147, 51, 234, 0.2);
     font-weight: 500;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background: rgba(46, 204, 113, 0.4);
+    background: rgba(147, 51, 234, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(147, 51, 234, 0.3);
 }
 
 button:active {
@@ -178,26 +178,26 @@ button:active {
 }
 
 .operator {
-    background: rgba(46, 204, 113, 0.25);
-    color: #ffffff;
-    border: 1px solid rgba(46, 204, 113, 0.3);
+    background: rgba(147, 51, 234, 0.25);
+    color: #e9d5ff;
+    border: 1px solid rgba(147, 51, 234, 0.3);
 }
 
 .operator:hover {
-    background: rgba(46, 204, 113, 0.4);
+    background: rgba(147, 51, 234, 0.4);
 }
 
 .function {
-    background: rgba(0, 0, 0, 0.8);
-    color: #90EE90;
+    background: rgba(88, 28, 135, 0.6);
+    color: #c084fc;
     font-size: 12px;
     font-weight: 600;
-    border: 1px solid rgba(46, 204, 113, 0.3);
+    border: 1px solid rgba(147, 51, 234, 0.3);
 }
 
 .function:hover {
-    background: rgba(10, 38, 21, 0.95);
-    color: #ffffff;
+    background: rgba(147, 51, 234, 0.3);
+    color: #e9d5ff;
 }
 
 .span-2 {
@@ -205,16 +205,16 @@ button:active {
 }
 
 #equals {
-    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    background: linear-gradient(135deg, #9333ea, #7e22ce);
     color: #ffffff;
     border: none;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
 }
 
 #equals:hover {
-    background: linear-gradient(135deg, #27ae60, #219a52);
-    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+    background: linear-gradient(135deg, #7e22ce, #6b21a8);
+    box-shadow: 0 6px 20px rgba(147, 51, 234, 0.4);
 }
 
 button.active {
@@ -454,17 +454,17 @@ button:not(.operator):not(.function):not(#equals):hover {
     z-index: 0;
     background: linear-gradient(
         45deg,
-        rgba(46, 204, 113, 0.1) 0%,
-        rgba(46, 204, 113, 0.05) 50%,
-        rgba(46, 204, 113, 0.02) 100%
+        rgba(147, 51, 234, 0.1) 0%,
+        rgba(147, 51, 234, 0.05) 50%,
+        rgba(147, 51, 234, 0.02) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-stroke: 1px rgba(46, 204, 113, 0.1);
+    -webkit-text-stroke: 1px rgba(147, 51, 234, 0.1);
     text-shadow: 
         2px 2px 0 rgba(0, 0, 0, 0.2),
         -1px -1px 0 rgba(255, 255, 255, 0.1);
-    filter: drop-shadow(0 0 2px rgba(46, 204, 113, 0.2));
+    filter: drop-shadow(0 0 2px rgba(147, 51, 234, 0.2));
 }
 
 @keyframes fadeInGraffiti {

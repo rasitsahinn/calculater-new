@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bilimsel Hesap Makinesi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="history-mini">
+                <div class="history-list"></div>
+            </div>
+            <div class="display-container">
+                <div class="calculation">0</div>
+                <input type="text" class="display" disabled value="0">
+            </div>
+            <div class="buttons">
+                <!-- Bilimsel Fonksiyonlar -->
+                <button class="operator function">sin</button>
+                <button class="operator function">cos</button>
+                <button class="operator function">tan</button>
+                <button class="operator function">DEG</button>
+                <button class="operator function">x²</button>
+                <button class="operator function">x³</button>
+                <button class="operator function">√</button>
+                <button class="operator function">∛</button>
+                <button class="operator function">log</button>
+                <button class="operator function">ln</button>
+                <button class="operator function">π</button>
+                <button class="operator function">e</button>
+                <button class="operator function">(</button>
+                <button class="operator function">)</button>
+                <button class="operator function">x^y</button>
+                <button class="operator function">|x|</button>
+                
+                <!-- Temel Hesap Makinesi -->
+                <button class="operator">C</button>
+                <button class="operator">±</button>
+                <button class="operator">%</button>
+                <button class="operator">÷</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="operator">×</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="operator">-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="operator">+</button>
+                <button class="span-2">0</button>
+                <button>.</button>
+                <button class="operator" id="equals">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
